@@ -2,7 +2,7 @@
 
 Welcome to my code institute website readme. This is for my milestone 3 project. For this, I have decided to create a game wishlisting service to allow for storing games and then wishlisting them; complete with their prices, name and description. I have done this because the goal for this project was to create a python website which was able to utilize either a relational database or a non-relational database in order to provide CRUD functionality to a user through relating at least 2 tables in said database.
 
-!["The first thing users see when loading the site"]()
+!["The first thing users see when loading the site"](read_me/home_page.png)
 
 [Click here to access the live website]()
 
