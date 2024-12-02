@@ -49,6 +49,10 @@ These are the wireframes I created to help me plan out the design of my website.
 
 The below database model shows the relationships between all of the models in my database and their relationships.
 
+| Key      | Value Type |  Description    |
+| :---        |    :----:   |          ---: |
+| ID   | Text        | Lorem Ipsum     |
+
 # Features #
 
 # Testing #
