@@ -1,6 +1,6 @@
 # Gamedream - A portfolio project.
 
-Welcome to my code institute website readme. This is for my milestone 3 project. For this, I have decided to create a game wishlisting service to allow for storing games and then wishlisting them; complete with their prices, name and description. I have done this because the goal for this project was to create a python website which was able to utilize either a relational database or a non-relational database in order to provide CRUD functionality to a user through relating at least 2 tables in said database.
+Welcome to my code institute website readme. This is for my milestone 4 project. For this I have decided to create a website for my mothers textile business revolving around the sale of her textile art and cards alongside various kits used to create them. I have done this by creating a django framework powered by a sqlite database and the web application stripe designed to provide secure payments. This was done because the project goal was to create an effective ecommerce website.
 
 !["The first thing users see when loading the site"](read_me/home_page.png)
 
@@ -32,26 +32,53 @@ Welcome to my code institute website readme. This is for my milestone 3 project.
 
 !["The user stories for my project"](read_me/user_stories.png)
 
+The above image displays the user stories that I will be using for my project.
+
 ### Wireframe
 
 These are the wireframes I created to help me plan out the design of my website. The designs were not final but there were a massive help in creating the project.
 
+Needed Wireframes
+
+1. Home Screen
+2. Product Selector
+3. Product Details
+4. Shopping bag
+5. Billing details
+6. Order Confirmation
+7. Account Creation
+8. Login
+9. User Profile
+10. Order History
+11. Contact
+12. Wishlist confirmation.
+
+
 
 ### Color Scheme
 
-![This was the palette I chose to use for my site.]()
+![This was the palette I chose to use for my site.](read_me/color_palette.png)
+
+The above color scheme was rather simple to create. My mother had suggested using 3 colors initially(Dun, Nyanza Green and Non-Photo Blue). Using those as a base, I then utilized 
 
 ### Typography
 
-![This was the font I chose to use for my site.]()
+![This was the font I chose to use for my site.](read_me/typography.png)
+
+When picking out an appropriate font for the website I wanted to avoid something like new times roman while also ensuring that it was still clear and easily read on smaller phone devices. To achieve that middle ground I settled upon using Overpass for my font of choice.
 
 ### Database
 
-The below database model shows the relationships between all of the models in my database and their relationships.
+The below database model shows the relationships between all of the models in my database and their relationships. The database features for handling account logins are handled by allauth rather than my own personal code.
 
 | Key      | Value Type |  Description    |
 | :---        |    :----:   |          ---: |
 | ID   | Text        | Lorem Ipsum     |
+
+Databases Needed
+
+1. Products
+
 
 # Features #
 
@@ -59,7 +86,7 @@ The below database model shows the relationships between all of the models in my
 
 ## Page Testing
 
-## Jquery
+## User Stories Testing
 
 ## Validator Testing
 
