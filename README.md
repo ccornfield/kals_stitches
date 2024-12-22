@@ -77,19 +77,79 @@ When picking out an appropriate font for the website I wanted to avoid something
 
 ### Database
 
-The below database model shows the relationships between all of the models in my database and their relationships. The database features for handling account logins are handled by allauth rather than my own personal code.
-
-| Key      | Value Type |  Description    |
-| :---        |    :----:   |          ---: |
-| ID   | Text        | Lorem Ipsum     |
+The below database models shows the relationships between all of the models in my database and their relationships. The database features for handling account logins are handled by allauth rather than my own personal code.
 
 Databases Needed
 
-1. Order
-2. OrderLineItem
-3. ArtCollection
-4. Product
-5. Profile
+#### Order
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Order Number|Character|Used to track the unique order number for a customer’s transaction|
+|User Profile|Foreign Key|Links the specific order to the account that created it.|
+|Full Name|Character|The user’s full name.|
+|Email|Character|The users email to track receipts.|
+|Phone Number|Character|The users phone number.|
+|Postcode|Character|The user’s postcode used for deliveries|
+|Town/City|Character|The user’s Town or City used for deliveries|
+|Street Address 1|Character|The first half of the user’s street address used for deliveries|
+|Street Address 2|Character|The second half of the user’s street address used for deliveries|
+|County|Character|The user’s postcode used for deliveries|
+|Date|Date|The date when the users order took place|
+|Delivery Cost|Decimal|The delivery fee on the order based on distance from the seller.|
+|Order Total|Decimal|The total amount of all the ordered products added together.|
+|Grand Total|Decimal|The combined amount of the Order Total and Delivery Cost Keys.|
+|Original Bag|Text|Remembers the original bag used before payment transaction.|
+|Stripe PID|Character|The Stripe PaymentIntent used for the API that handles credit card payments.|
+
+#### OrderLineItem
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Order|Foreign Key|The order associated with the line item.|
+|Product|Foreign Key|The item from the shopping bag.|
+|Quantity|Integer|The amount of said shopping bag item.|
+|Line-Item Total|Decimal|The price of the product times the quantity of said product.|
+
+#### ArtCollection
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Name|Character|The name of the category for backend purposes|
+|Friendly Name|Character|The name of the category for frontend purposes|
+
+#### Product
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Category|Foreign Key|The category the product belongs to.|
+|SKU|Character|The unique identifier number for the product|
+|Name|Character|The product name|
+|Description|Text|The product description|
+|Price|Decimal|How much the product costs.|
+|Upvotes|Integer|How many likes a product has|
+|Downvotes|Integer|How many dislikes the product has|
+|Image URL|URL|The URL storing the image.|
+|Image|Image|The field displaying the image itself in HTML|
+
+#### Profile
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|User|One To One|Interacts with the User model in Django.allauth|
+|Default Phone Number|Character|The users default phone number.|
+|Default Postcode|Character|The user’s default postcode used for deliveries|
+|Default Town/City|Character|The user’s default Town or City used for deliveries|
+|Default Street Address 1|Character|The first half of the user’s default street address used for deliveries|
+|Default Street Address 2|Character|The second half of the user’s default street address used for deliveries|
+|Default County|Character|The user’s postcode used for default deliveries|
+
+#### Newsletter
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Profile|Foreign Key|Links the specific email to the account that created it.|
+|Email|Character|The users email to send newletter updates too|
 
 # Features #
 
