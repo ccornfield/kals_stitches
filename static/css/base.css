@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+#home-page {
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background-size:auto;
+}
+
+body {
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: 'Overpass';
+}
