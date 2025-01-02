@@ -1,22 +1,73 @@
-* {
-    margin: 0px;
-    padding: 0px; 
-    outline: none;
-    border: 0px;
-    
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
   }
 
-html {
-    height: 100%;
-}
-
-#home-page {
-    background: url('/media/home_page.jpg') no-repeat center center fixed;
-    background-size:auto;
-}
-
 body {
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Overpass';
+/* Margin bottom by footer height */
+margin-bottom: 100px;
+background: url('/media/home_page.jpg') no-repeat center center fixed;
+background-size:auto;
+clear: both;
+}
+
+footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+/* Set the fixed height of the footer here */
+height: 100px;
+line-height: 50px; /* Vertically center the text there */
+background: #AADDDD;
+}
+
+header {
+    background: #DFFFD6;
+}
+  
+  
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+  
+body > .container-fluid,
+body > .container {
+padding: 20px 15px 0;
+}
+
+footer > .container-fluid,
+header > .container-fluid,
+footer > .container,
+header > .container {
+padding-right: 15px;
+padding-left: 15px;
+}
+  
+  /* Above code taken from a bootstrap preset */
+
+  .social_media{
+    display: inline-block;
+    text-align: left;
+  }
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #d8c7b2;;
+    z-index: -1;
+}
+
+.border-success,
+.btn-success{
+    border-color: #202A25 !important;
+}
+
+.btn-primary{
+    background-color: #5f4bb6 !important;
+    border-color: #5f4bb6 !important;
 }
