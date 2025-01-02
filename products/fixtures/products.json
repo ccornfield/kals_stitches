@@ -1,0 +1,122 @@
+[
+    {
+       "pk":1,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001340155",
+          "name":"Summers Eve",
+          "description":"Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
+          "price":50.00,
+          "art_collection":1,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.shop.obsidianart.co.uk/products/a-summers-eve-textile-art-by-rachel-wright",
+          "image":"summer_1.png"
+       }
+    },
+    {
+       "pk":2,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001600425",
+          "name":"Summer Skies",
+          "description":"Straight-leg styling and on-the-job comfort make our Audra pants a flattering business decision. flat front zip fly with hook-and-bar closure 2 front and 2 back welt pockets 34 1/2\" inseam polyester/rayon/spandex washable imported",
+          "price":50.00,
+          "art_collection":1,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.shop.obsidianart.co.uk/products/summer-skies-textile-art-by-rachel-wright",
+          "image":"summer_2.png"
+       }
+    },
+    {
+       "pk":3,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001730010",
+          "name":"Autumn Forest",
+          "description":"Add a 5-star resort feel to your bedroom with the elegant Matte Satin Square coverlet set, featuring modern embroidered squares and flanged trim.  square embroidered pattern flanged-edge trim fabric is washable for easy care 3-piece set includes: coverlet 2 shams Polyester coverlet with cotton fill; polyester shams. Washable. Imported. Full/Queen: coverlet is 92x96\" King: coverlet is 110x96\"",
+          "price":50.00,
+          "art_collection":2,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.fionarobertsonartworks.co.uk/autumn.html",
+          "image":"autumn_1.png"
+       }
+    },
+    {
+       "pk":4,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5001890157",
+          "name":"Autumn Brush",
+          "description":"An exhibition in contrast, this dinnerware sets simple, clean design is perfect for both everyday use and special occasions. durable stoneware construction microwave and oven safe service for 4 16-piece set includes: four 10\" dinner plates four 7\" dessert plates four 6\" bowls four 12-ounce mugs Stoneware. Dishwasher safe. Imported.",
+          "price":50.00,
+          "art_collection":2,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.fionarobertsonartworks.co.uk/autumn.html",
+          "image":"autumn_2.png"
+       }
+    },
+    {
+       "pk":5,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5002111605",
+          "name":"Strong Tree",
+          "description":"Durable enameled cast iron construction allows the panini pan to heat evenly, so you can whip up a meal with ease and complete confidence.  cooks with little to no oils or fats so every recipe is healthier nonstick interior for quick and easy clean-ups stainless steel knob on cover enameled cast iron heats evenly and consistently stove, broiler and oven safe Cast iron/stainless steel. Dishwasher safe. Imported. ",
+          "price":50.00,
+          "art_collection":3,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.jacqui-textile.com/product/spring/",
+          "image":"spring_1.png"
+       }
+    },
+    {
+       "pk":6,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5002260206",
+          "name":"Distant Island",
+          "description":"Get a better basic tee in a size that truly fits with this pocket t-shirt from The Foundry Supply Co.  short-sleeve, crew-neck tee left chest pocket 100% cotton washable imported",
+          "price":50.00,
+          "art_collection":3,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://www.jackiegaletextileart.com/store-1-1/p/spring-tide",
+          "image":"spring_2.png"
+       }
+    },
+    {
+       "pk":7,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5002440521",
+          "name":"Winter Stag",
+          "description":"Walk a little taller in our slimming straight-leg pants. flat front slim fit straight leg front fly with nylon zipper, hook and bar closure 32\" inseam polyester/rayon/spandex washable imported ",
+          "price":50.00,
+          "art_collection":4,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://thecannysquirrel.co.uk/products/winter-stag-textile-art",
+          "image":"winter_1.png"
+       }
+    },
+    {
+       "pk":8,
+       "model":"products.product",
+       "fields":{
+          "sku":"pp5002601115",
+          "name":"Winter Wonderland",
+          "description":"This olive oil dispenser is designed for storing extra virgin olive oil, so it's close at hand for drizzling on food.  24-ounce capacity cruet opaque bottle and non-porous glazed interior keep oil in the dark to avoid oxidation and preserve taste playful, contemporary design Stoneware. Dishwasher-safe. Imported.",
+          "price":50.00,
+          "art_collection":4,
+          "upvotes": 0,
+          "downvotes": 0,
+          "image_url":"https://elliehipkinart.com/product/winter-light-original-painting",
+          "image":"winter_2.png"
+       }
+    }
+]
