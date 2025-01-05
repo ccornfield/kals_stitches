@@ -94,7 +94,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href=" ">
+                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                       <div class="text-center">
                         <i class="fa-solid fa-cart-shopping d-inline-block align-text-bottom"></i>
                           Shopping bag
@@ -109,7 +109,7 @@
                     </a>
                   </li>
                   <li>
-                    <form class="d-flex" method="GET" action=" ">
+                    <form class="d-flex" method="GET" action="{% url 'products' %}">
                       <div class="input-group w-100">
                           <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                           <div class="input-group-append">
@@ -131,13 +131,23 @@
       <div class="row">
         <div class="dropdown d-flex justify-content-end w-100">
           <button class="dropdown-toggle product-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Our products
+            Our Artwork
           </button>
           <ul class="dropdown-menu">
             <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+            <a href="{% url 'products' %}?sort=upvotes&direction=desc" class="dropdown-item ">By Upvotes</a>
+            <a href="{% url 'products' %}?sort=downvotes&direction=desc" class="dropdown-item ">By Downvotes</a>
+            <a href="{% url 'products' %}?sort=art_collection&direction=asc" class="dropdown-item ">By Collection</a>
             <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+          </ul>
+          <button class="dropdown-toggle product-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Our Collections
+          </button>
+          <ul class="dropdown-menu">
+            <a href="{% url 'products' %}?art_collection=summer_collection" class="dropdown-item">Summer</a>
+            <a href="{% url 'products' %}?art_collection=winter_collection" class="dropdown-item ">Winter</a>
+            <a href="{% url 'products' %}?art_collection=spring_collection" class="dropdown-item ">Spring</a>
+            <a href="{% url 'products' %}?art_collection=autumn_collection" class="dropdown-item ">Autumn</a>
           </ul>
         </div>
       </div>
