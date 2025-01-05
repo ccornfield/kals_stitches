@@ -18,7 +18,8 @@ margin-bottom: 100px;
 background: url('/media/home_page.jpg') no-repeat center center fixed;
 background-size:auto;
 clear: both;
-height: calc(100vh - 164px);
+height: 100%;
+padding-bottom: 20px;
 }
 
 footer{
@@ -27,7 +28,7 @@ bottom: 0;
 width: 100%;
 /* Set the fixed height of the footer here */
 height: 100px;
-line-height: 50px; /* Vertically center the text there */
+line-height: 100px; /* Vertically center the text there */
 background: #AADDDD;
 padding: 3em;
 }
@@ -54,7 +55,11 @@ header {
   padding-right: 5px;
   font-size: 20px;
 }
-  
+
+.fas{
+  margin: 10px;
+}
+
   /* Custom page CSS
   -------------------------------------------------- */
   /* Not required for template or sticky footer method. */
