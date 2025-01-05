@@ -5,15 +5,23 @@ html {
     min-height: 100%;
   }
 
+  *{
+    margin: 0px;
+    padding: 0px; 
+    outline: none;
+    border: 0px;
+  }
+
 body {
 /* Margin bottom by footer height */
 margin-bottom: 100px;
 background: url('/media/home_page.jpg') no-repeat center center fixed;
 background-size:auto;
 clear: both;
+height: calc(100vh - 164px);
 }
 
-footer {
+footer{
 position: absolute;
 bottom: 0;
 width: 100%;
@@ -21,10 +29,12 @@ width: 100%;
 height: 100px;
 line-height: 50px; /* Vertically center the text there */
 background: #AADDDD;
+padding: 3em;
 }
 
 header {
     background: #DFFFD6;
+    width: 100%;
 }
   
   
