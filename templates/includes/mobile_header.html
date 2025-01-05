@@ -8,25 +8,25 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-house mobile_icon"></i>
                 Home
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-sun mobile_icon"></i>
                 Light Mode
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'products' %}">
-                <i class="fa-solid fa-store"></i>
+                <i class="fa-solid fa-store mobile_icon"></i>
                 Products
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-envelope mobile_icon"></i>
                 Contact
               </a>
             </li>
@@ -34,32 +34,32 @@
             {% if request.user.is_superuser %}
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa-solid fa-clipboard"></i>
+                    <i class="fa-solid fa-clipboard mobile_icon"></i>
                     Product Management
                 </a>
             </li>
             {% endif %}
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user mobile_icon"></i>
                     My Profile
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_logout' %}">
-                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <i class="fa-solid fa-right-from-bracket mobile_icon"></i>
                     Logout
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_signup' %}">
-                    <i class="fa-solid fa-pen"></i>
+                    <i class="fa-solid fa-pen mobile_icon"></i>
                     Register
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_login' %}">
-                    <i class="fa-regular fa-pen-to-square"></i>
+                    <i class="fa-regular fa-pen-to-square mobile_icon"></i>
                     Login
                 </a>
             </li>
@@ -67,7 +67,7 @@
             <li class="nav-item d-flex justify-content-start">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href=" ">
                 <div class="text-center">
-                  <i class="fa-solid fa-cart-shopping d-inline-block align-text-bottom"></i>
+                  <i class="fa-solid fa-cart-shopping d-inline-block align-text-bottom mobile_icon"></i>
                     Shopping bag
                   <p class="my-0">
                       {% if grand_total %}
