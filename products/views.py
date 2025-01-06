@@ -26,11 +26,11 @@ def all_products(request):
             if sortkey == 'art_collection':
                 sortkey ="art_collection__name"
 
-        if 'direction' in request.GET:
-            direction = request.GET['direction']
-            if direction == 'desc':
-                sortkey = f'-{sortkey}'
-        products = products.order_by(sortkey)
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
 
         if 'art_collection' in request.GET:
             collections = request.GET['art_collection'].split(',')
