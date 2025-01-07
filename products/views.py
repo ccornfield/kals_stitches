@@ -11,7 +11,7 @@ def all_products(request):
 
     products = Product.objects.all()
     query = None
-    art_collection = None
+    collections = None
     sort = None
     direction = None
 
@@ -51,6 +51,8 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
+        'current_collections': collections,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
