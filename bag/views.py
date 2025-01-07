@@ -7,7 +7,7 @@ def view_bag(request):
     
     return render(request, 'bag/bag.html')
 
-'''def adjust_bag(request, item_id):
+def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
     product = get_object_or_404(Product, pk=item_id)
@@ -22,7 +22,7 @@ def view_bag(request):
         messages.success(request, f'Removed {product.name} from your bag')
 
     request.session['bag'] = bag
-    return redirect(reverse('view_bag'))'''
+    return redirect(reverse('view_bag'))
 
 def add_to_bag(request, item_id):
 
