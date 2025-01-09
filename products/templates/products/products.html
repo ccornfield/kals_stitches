@@ -27,14 +27,14 @@
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center">
                         <div class="sort-select-wrapper w-50">
-                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
-                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                                <option value="art_collection_asc" {% if current_sorting == 'art_collection_asc' %}selected{% endif %}>Art Collection (A-Z)</option>
-                                <option value="art_collection_desc" {% if current_sorting == 'art_collection_desc' %}selected{% endif %}>Art Collection (Z-A)</option>
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None-None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None-None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price-asc" {% if current_sorting == 'price-asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price-desc" {% if current_sorting == 'price-desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name-asc" {% if current_sorting == 'name-asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name-desc" {% if current_sorting == 'name-desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="art_collection-asc" {% if current_sorting == 'art_collection-asc' %}selected{% endif %}>Art Collection (A-Z)</option>
+                                <option value="art_collection-desc" {% if current_sorting == 'art_collection-desc' %}selected{% endif %}>Art Collection (Z-A)</option>
                             </select>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             <div class="card-footer pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
-                                        <p class="lead mb-0 text-left price-footer font-weight-bold">${{ product.price }}</p>
+                                        <p class="lead mb-0 text-left price-footer font-weight-bold">£{{ product.price }}</p>
                                         {% if product.category %}
                                         <p class="small mt-1 mb-0">
                                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -100,8 +100,8 @@
 
             var selectedVal = selector.val();
             if (selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+                var sort = selectedVal.split("-")[0];
+                var direction = selectedVal.split("-")[1];
 
                 currentUrl.searchParams.set("sort", sort)
                 currentUrl.searchParams.set("direction", direction)

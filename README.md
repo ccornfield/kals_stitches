@@ -122,7 +122,7 @@ Databases Needed
 
 |Key|Value Type|Description|
 |:----|:----|:----|
-|Category|Foreign Key|The category the product belongs to.|
+|Art Collection|Foreign Key|The category the product belongs to.|
 |SKU|Character|The unique identifier number for the product|
 |Name|Character|The product name|
 |Description|Text|The product description|
