@@ -1,8 +1,11 @@
 asgiref==3.8.1
 Django==5.1.4
 django-allauth==65.3.1
+django-crispy-forms==2.3
 oauthlib==3.2.2
+pillow==11.1.0
 PyJWT==2.10.1
 pytz==2024.2
 requests-oauthlib==2.0.0
 sqlparse==0.5.2
+stripe==11.4.1
