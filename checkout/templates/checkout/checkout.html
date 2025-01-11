@@ -63,7 +63,7 @@
                     <input type="hidden" value="#" name="client_secret">
                 </fieldset>
 
-                <div class="submit-button text-right mt-5 mb-2">                    
+                <div class="submit-button text-right mt-1 mb-2">                    
                     <a href="{% url 'view_bag' %}" class="btn btn-primary btn-outline-black rounded-0 mt-5">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
@@ -113,22 +113,21 @@
                     <div class="col-3 p-3">
                         <p>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                     </div>
-                    <div class="row">
-                        <div class="col-7 text-right">
-                            <p>Order Total:</p>
-                            <p>Delivery:</p>
-                            <p>Grand Total:</p>
-                        </div>
-                        <div class="col-3 text-right">
-                            <p>£{{ total|floatformat:2 }}</p>
-                            <p>£{{ delivery|floatformat:2 }}</p>
-                            <p class="mt-4">£{{ grand_total|floatformat:2 }}</p>
-                        </div>
-                    </div>
                 </div>
             {% endfor %}
+            <div class="row">
+                <div class="col-7 text-right">
+                    <p>Order Total:</p>
+                    <p>Delivery:</p>
+                    <p>Grand Total:</p>
+                </div>
+                <div class="col-3 text-right">
+                    <p>£{{ total|floatformat:2 }}</p>
+                    <p>£{{ delivery|floatformat:2 }}</p>
+                    <p class="mt-4">£{{ grand_total|floatformat:2 }}</p>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
 
