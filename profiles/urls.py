@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 from . import views
-from .webhooks import webhook
 
 urlpatterns = [
-    path('', views.profiles, name='profiles'),
+    path('', views.profile, name='profile'),
+    path('order_history/<order_number>', views.order_history, name='order_history')
 ]

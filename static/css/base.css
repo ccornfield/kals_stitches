@@ -12,6 +12,11 @@ html {
     border: 0px;
   }
 
+  .order-history{
+    max-height: 416px;
+    overflow-y: auto;
+}
+
 body {
 /* Margin bottom by footer height */
 margin-bottom: 100px;
