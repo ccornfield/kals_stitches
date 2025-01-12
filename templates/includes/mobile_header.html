@@ -1,6 +1,6 @@
 <nav class="navbar mobile-nav d-lg-none d-flex justify-content-start">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
@@ -31,16 +31,8 @@
               </a>
             </li>
             {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa-solid fa-clipboard mobile_icon"></i>
-                    Product Management
-                </a>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'profile' %}">
                     <i class="fa-solid fa-user mobile_icon"></i>
                     My Profile
                 </a>
