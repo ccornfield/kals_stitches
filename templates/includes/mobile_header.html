@@ -30,6 +30,12 @@
                 Contact
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa-solid fa-comment mobile_icon"></i>
+                Testimonials
+              </a>
+            </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'profile' %}">
