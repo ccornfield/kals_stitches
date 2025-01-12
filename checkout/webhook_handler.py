@@ -92,7 +92,7 @@ class StripeWH_Handler:
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
                     grand_total=grand_total,
-                    #original_bag=bag,
+                    original_bag=bag,
                     stripe_pid=pid,
                 )
                 order_exists = True
