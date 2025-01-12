@@ -9,6 +9,7 @@ from products.models import Product
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -92,7 +93,7 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     grand_total=grand_total,
                     #original_bag=bag,
-                    #stripe_pid=pid,
+                    stripe_pid=pid,
                 )
                 order_exists = True
                 break

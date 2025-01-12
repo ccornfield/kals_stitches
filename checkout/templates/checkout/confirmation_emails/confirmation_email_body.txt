@@ -1,1 +1,5 @@
-Kal Stitches Confirmation for Order Number {{ order.order_number }}
+Congratulations {{order.full_name}}!
+
+Your order has been confirmed and will be sent to you shortly!
+
+Thank you for shopping with Kal Stitches!

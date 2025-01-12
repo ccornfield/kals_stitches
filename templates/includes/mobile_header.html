@@ -51,6 +51,7 @@
                     Logout
                 </a>
             </li>
+            {% endif %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'account_signup' %}">
                     <i class="fa-solid fa-pen mobile_icon"></i>
@@ -63,7 +64,6 @@
                     Login
                 </a>
             </li>
-            {% endif %}
             <li class="nav-item d-flex justify-content-start">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                 <div class="text-center">
