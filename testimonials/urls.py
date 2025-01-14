@@ -18,4 +18,7 @@ from . import views
 
 urlpatterns = [
     path('', views.testimonials, name='testimonials'),
+    path('add/', views.add_testimonials, name='add_testimonials'),
+    path('edit/<int:testimonies_id>/', views.edit_testimonials, name='edit_testimonials'),
+    path('delete/<int:testimonies_id>/', views.delete_testimonials, name='delete_testimonials'),
 ]

@@ -13,7 +13,7 @@ RATINGS_CHOICES = (
 class TestimonyForm(forms.ModelForm):
     class Meta:
         model = Testimonies
-        exclude = ('date', 'author_id',)
+        exclude = ('date', 'creator',)
         
     rating = forms.ChoiceField(choices=RATINGS_CHOICES)
 
@@ -25,8 +25,8 @@ class TestimonyForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         placeholders = {
             'name': 'Name',
+            'rating': "N/A",
             'description': 'Description',
-            'rating': "N/A"
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True

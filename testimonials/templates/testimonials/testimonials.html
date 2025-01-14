@@ -19,25 +19,35 @@
                 <hr>
                 <h2 class="logo-font mb-4">Testimonials</h2>
                 <hr>
-                <p> Click the button below to make your own testimonial!</p>
-                <div class="row text-right mt-1 m-2">
-                    <a href="#" class="btn btn-primary btn-outline-black rounded-0 mt-5 w-25">
-                        <span class="text-capitalized">Create a testimonial!</span>
-                    </a>
-                </div>
+                {% if request.user.is_authenticated %}
+                    <p> Click the button below to make your own testimonial!</p>
+                    <div class="row text-right mt-1 m-2">
+                        <a href="{% url 'add_testimonials' %}" class="btn btn-primary btn-outline-black rounded-0 mt-5 w-25">
+                            <span class="text-capitalized">Create a testimonial!</span>
+                        </a>
+                    </div>
+                {% endif %}
                 {% for t in testimonies %}
-                <div class="row mb-3">
                     <hr>
-                    <strong>{{ t.name }} - {{t.date}}</strong>
+                    <div class="row">
+                        <strong>{{ t.name }} - {{t.date}}</strong>
+                        <p>Rating: {{ t.rating }}/5 </p>
+                    </div>
+                    <div class="row p-3">
+                        {{ t.description }}
+                    </div>
                     <hr>
-                    {% for rating in t.rating %}
-                        <i class="fa-solid fa-star"></i>
-                    {% endfor %}
-                </div>
-                <div class="row mb-3">
-                    {{ t.description }}
-                </div>
+                    {% if request.user.is_authenticated %}
+                        <small class="ml-3">
+                            <a href="#">Edit Testimony</a>
+                            <a class="text-danger" href="#">Delete</a>
+                        </small>
+                    {% endif %}
                 {% endfor %}
+                <!-- <small class="ml-3">
+                    <a href="{% url 'edit_testimonials' testimonies.id %}">Edit Testimony</a>
+                    <a class="text-danger" href="{% url 'delete_testimonials' testimonies.id %}">Delete</a>
+                </small> -->
             </div>
         </div>
     </div>
