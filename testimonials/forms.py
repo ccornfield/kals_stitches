@@ -10,11 +10,12 @@ RATINGS_CHOICES = (
     ("5", "5"),
 )
 
-class ContactForm(forms.ModelForm):
+class TestimonyForm(forms.ModelForm):
     class Meta:
         model = Testimonies
-        fields = ('name', 'description', 'rating')
-        rating = forms.ChoiceField(choices=RATINGS_CHOICES)
+        exclude = ('date', 'author_id',)
+        
+    rating = forms.ChoiceField(choices=RATINGS_CHOICES)
 
     def __init__(self, *args, **kwargs):
         """

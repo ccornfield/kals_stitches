@@ -20,8 +20,25 @@
                 <h2 class="logo-font mb-4">Testimonials</h2>
                 <hr>
                 <p> Click the button below to make your own testimonial!</p>
+                <div class="row text-right mt-1 m-2">
+                    <a href="#" class="btn btn-primary btn-outline-black rounded-0 mt-5 w-25">
+                        <span class="text-capitalized">Create a testimonial!</span>
+                    </a>
+                </div>
+                {% for t in testimonies %}
+                <div class="row mb-3">
+                    <hr>
+                    <strong>{{ t.name }} - {{t.date}}</strong>
+                    <hr>
+                    {% for rating in t.rating %}
+                        <i class="fa-solid fa-star"></i>
+                    {% endfor %}
+                </div>
+                <div class="row mb-3">
+                    {{ t.description }}
+                </div>
+                {% endfor %}
             </div>
-            
         </div>
     </div>
 </div>
