@@ -1,13 +1,20 @@
 from django import forms
-from .models import Order
+from .models import Testimonies
 
 
-class OrderForm(forms.ModelForm):
+RATINGS_CHOICES = (
+    ("1", "1"),
+    ("2", "2"),
+    ("3", "3"),
+    ("4", "4"),
+    ("5", "5"),
+)
+
+class ContactForm(forms.ModelForm):
     class Meta:
-        model = Order
-        fields = ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2',
-                  'town_or_city', 'postcode',)
+        model = Testimonies
+        fields = ('name', 'description', 'rating')
+        rating = forms.ChoiceField(choices=RATINGS_CHOICES)
 
     def __init__(self, *args, **kwargs):
         """
@@ -16,21 +23,16 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone Number',
-            'postcode': 'Postal Code',
-            'town_or_city': 'Town or City',
-            'street_address1': 'Street Address 1',
-            'street_address2': 'Street Address 2',
+            'name': 'Name',
+            'description': 'Description',
+            'rating': "N/A"
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
-                placeholder = f'{placeholders[field]}'
+                placeholder = f'{placeholders[field]}*'
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
