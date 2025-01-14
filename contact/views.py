@@ -23,19 +23,20 @@ def contact(request):
         if contact_form.is_valid():
             contact = contact_form.save()
             cust_email = contact.email
+            from_email = settings.EMAIL_HOST_USER
             subject = render_to_string(
                 'contact/inquiry_emails/inquiry_email_subject.txt',
                 {'contact': contact})
             body = render_to_string(
                 'contact/inquiry_emails/inquiry_email_body.txt',
-                {'contact': contact, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+                {'contact': contact})
             
             messages.success(request, 'Contact email sent successfully')
         
             send_mail(
                 subject,
                 body,
-                settings.DEFAULT_FROM_EMAIL,
+                from_email,
                 [cust_email]
             ) 
         else:
