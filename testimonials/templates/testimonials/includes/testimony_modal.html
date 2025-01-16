@@ -1,0 +1,24 @@
+<div class="modal fade" id="delete_testimony" tabindex="-1" aria-labelledby="delete_testimony_modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete_testimony_modal">Warning!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You are about to delete this testimony. This cannot be undone! Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+                {% if request.user == t.creator %}
+                    <button type="button" class="btn btn-danger testimony-link">
+                        <a href="{% url 'edit_testimonials' t.id %}">Delete Testimony</a>
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

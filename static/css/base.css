@@ -120,3 +120,7 @@ padding-left: 15px;
   overflow: visible;
   margin-bottom: 100px;
 }
+
+.testimony-link{
+  text-decoration: none;
+}

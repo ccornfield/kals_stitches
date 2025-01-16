@@ -39,10 +39,15 @@
                     <hr>
                     {% if request.user == t.creator %}
                         <small class="ml-3">
-                            <a href="{% url 'edit_testimonials' t.id %}">Edit Testimony</a>
-                            <a class="text-danger" href="{% url 'delete_testimonials' t.id %}">Delete</a>
+                            <button type="button" class="btn btn-info testimony-link">
+                                <a href="{% url 'edit_testimonials' t.id %}">Edit Testimony</a>
+                            </button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_testimony">
+                                Delete
+                            </button>
                         </small>
                     {% endif %}
+                    {% include 'testimonials/includes/testimony_modal.html' %}
                 {% endfor %}
             </div>
         </div>
