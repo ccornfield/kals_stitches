@@ -79,8 +79,6 @@ When picking out an appropriate font for the website I wanted to avoid something
 
 The below database models shows the relationships between all of the models in my database and their relationships. The database features for handling account logins are handled by allauth rather than my own personal code.
 
-Databases Needed
-
 #### Order
 
 |Key|Value Type|Description|
@@ -94,7 +92,6 @@ Databases Needed
 |Town/City|Character|The user’s Town or City used for deliveries|
 |Street Address 1|Character|The first half of the user’s street address used for deliveries|
 |Street Address 2|Character|The second half of the user’s street address used for deliveries|
-|County|Character|The user’s postcode used for deliveries|
 |Date|Date|The date when the users order took place|
 |Delivery Cost|Decimal|The delivery fee on the order based on distance from the seller.|
 |Order Total|Decimal|The total amount of all the ordered products added together.|
@@ -142,20 +139,48 @@ Databases Needed
 |Default Town/City|Character|The user’s default Town or City used for deliveries|
 |Default Street Address 1|Character|The first half of the user’s default street address used for deliveries|
 |Default Street Address 2|Character|The second half of the user’s default street address used for deliveries|
-|Default County|Character|The user’s postcode used for default deliveries|
 
-#### Newsletter
+#### Contact
 
 |Key|Value Type|Description|
 |:----|:----|:----|
-|Profile|Foreign Key|Links the specific email to the account that created it.|
-|Email|Character|The users email to send newletter updates too|
+|Subject|Character|The subject of the contact email|
+|Body|Text|The main body of the contact email|
+|Email|Email|The users email to use when sending their email to the server|
+
+#### Testimonies
+
+|Key|Value Type|Description|
+|:----|:----|:----|
+|Creator|Foreign Key|A foreign key with the user at the time of creating the testimony|
+|Name|Character|The name of the testimony creator|
+|Date|Date|The date when the testimony was created|
+|Body|Text|The main body of the testimony|
+|Rating|Character|A rating for what the user thought about the website from 1 to 5|
 
 # Features #
 
 # Testing #
 
 ## Page Testing
+
+### General
+
+The general design of my website was inspired by the need for it to look both eye catching yet easy to read and understand. To facilitate this, a universal feature on the website is that all buttons are either large or distinctly colored. In additon to this, all important bodies of text were surrounded in a clear border to draw view attention to them first before any other on screen elements.
+
+### Home page
+
+!["The home page for my website"](read_me/home_page.png)
+
+When a user first logs onto my website, the first thing that they will be met with is this screen showing the home page. It has a distinct header and a distinct footer. The header contains important links to the rest of the website chiefly among them being the links to the products page and the shopping bag. Other important links are the link back to the home page that can be used anywhere on the site, the contact and testimonial links that take users to the means to both speak directly to the store owners and leave reviews on the website respectively. The light mode button was originally meant to be used for a light and dark mode option, however due to time constraints this feature will be implemented at a later date. The header also contains dropdowns that allows users to search for products based on various factors and the specific art collection they're looking for. In the center of the page is a link informing the user that a new art collection has been added to the store, clicking it will send them to the product page to view the available items. In the footer are links to various social medias associated with the store owner, currently the link will just send users to the homepage of each site, but in the live version for the client it will link to their business social medias. While there were several issues with css initially, most noteably with a gap on the side of the web page, this was corrected by ensuring that the entireity of the header element was wrapped in a fluid container.
+
+### Profile
+
+!["The profile page for my website"](read_me/features/profile.png)
+
+As the pages for login, logout and account creation are handled by allauth, I will only be speaking about the profile page in this readme. The profile page has two unique functions. One of which is to store the order history of the client so that they can check and remember what products they have brought and in what quantities. Clicking the respective order number with send the user to a seperate page showing the full details of that specific order. The other important feature of the page is to allow the logged in user to submit their delivery details here so that they can be used when they check out in future. The development of this app was a fairly smooth experience without much in the way of struggle.
+
+### Contact
 
 ## User Stories Testing
 
@@ -178,7 +203,7 @@ Databases Needed
 |Functionality|Add items in the shopping bag|Users should be able to add items to their shopping bag|Enable users to add items of various quantities and sizes to a shopping bag.|Pass or fail|
 |Functionality|Update items in the shopping bag|Users should be able to change product amounts if they change their mind.|Shopping bag should carry functionally to change quantity amounts.|Pass or fail|
 |Functionality|Delete items in the shopping bag|Users should be able to delete products from the bag if they change their mind.|Shopping bag should carry functionally to delete added products.|Pass or fail|
-|Functionality|Cancel orders pre dispatch|Delete functionality for stored order history.|Deleting order history sends alert email to admin.|Pass or fail|
+|Functionality|#|#|#|Pass or fail|
 
 
 
@@ -242,6 +267,7 @@ https://www.wearedevelopers.com/magazine/how-to-create-a-test-plan-for-software-
 
 https://boost-tool.com/en/tools/md_table
 
+https://books.agiliq.com/projects/django-admin-cookbook/en/latest/current_user.html
 
 
 # Credits #

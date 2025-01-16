@@ -37,10 +37,10 @@
                         {{ t.description }}
                     </div>
                     <hr>
-                    {% if request.user.is_authenticated %}
+                    {% if request.user == t.creator %}
                         <small class="ml-3">
-                            <a href="#">Edit Testimony</a>
-                            <a class="text-danger" href="#">Delete</a>
+                            <a href="{% url 'edit_testimonials' t.id %}">Edit Testimony</a>
+                            <a class="text-danger" href="{% url 'delete_testimonials' t.id %}">Delete</a>
                         </small>
                     {% endif %}
                 {% endfor %}

@@ -19,7 +19,7 @@
                 <hr>
                 <h2 class="logo-font mb-4">Testimonials</h2>
                 <hr>
-                <strong>Create your Testimonial</strong>
+                <strong>Edit your Testimonial</strong>
                 <form class="mt-3" action="{% url 'edit_testimonials' testimonies.id %}" method="POST" id="testimony-form">
                     {% csrf_token %}
                         {% for field in form %}
