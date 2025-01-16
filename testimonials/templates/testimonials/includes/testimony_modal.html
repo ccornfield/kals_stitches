@@ -15,7 +15,7 @@
 
                 {% if request.user == t.creator %}
                     <button type="button" class="btn btn-danger testimony-link">
-                        <a href="{% url 'edit_testimonials' t.id %}">Delete Testimony</a>
+                        <a href="{% url 'delete_testimonials' t.id %}">Delete Testimony</a>
                     </button>
                 {% endif %}
             </div>

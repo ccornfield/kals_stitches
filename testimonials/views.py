@@ -66,7 +66,7 @@ def edit_testimonials(request, testimonies_id): # Testimonies_id is not a valid 
             else:
                 messages.error(request, 'Failed to update testimony. Please ensure the form is valid.')
         else:
-            testimony_form = TestimonyForm()
+            testimony_form = TestimonyForm(instance=testimonies)
     else:
         messages.error(request, 'Sorry, only the original author can do that')
         return redirect(reverse('testimonials'))
