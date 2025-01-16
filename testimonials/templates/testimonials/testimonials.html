@@ -27,28 +27,29 @@
                         </a>
                     </div>
                 {% endif %}
-                {% for t in testimonies %}
-                    <hr>
-                    <div class="row">
-                        <strong>{{ t.name }} - {{t.date}}</strong>
-                        <p>Rating: {{ t.rating }}/5 </p>
-                    </div>
-                    <div class="row p-3">
-                        {{ t.description }}
-                    </div>
-                    <hr>
-                    {% if request.user == t.creator %}
-                        <small class="ml-3">
-                            <button type="button" class="btn btn-info testimony-link">
-                                <a href="{% url 'edit_testimonials' t.id %}">Edit Testimony</a>
-                            </button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_testimony">
-                                Delete
-                            </button>
-                        </small>
-                    {% endif %}
-                    {% include 'testimonials/includes/testimony_modal.html' %}
-                {% endfor %}
+                <hr>
+                <div class="testimony-container py-auto">
+                    {% for t in testimonies %}
+                        <div class="row">
+                            <strong>{{ t.name }} - {{t.date}}</strong>
+                            <p>Rating: {{ t.rating }}/5 </p>
+                        </div>
+                        <div class="row p-3">
+                            {{ t.description }}
+                        </div>
+                        {% if request.user == t.creator %}
+                            <small class="ml-3">
+                                <button type="button" class="btn btn-info testimony-link">
+                                    <a href="{% url 'edit_testimonials' t.id %}">Edit Testimony</a>
+                                </button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_testimony">
+                                    Delete
+                                </button>
+                            </small>
+                        {% endif %}
+                        {% include 'testimonials/includes/testimony_modal.html' %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

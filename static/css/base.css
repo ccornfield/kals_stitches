@@ -17,6 +17,13 @@ html {
     overflow-y: auto;
 }
 
+.testimony-container{
+  max-height: 400px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 body {
 /* Margin bottom by footer height */
 margin-bottom: 100px;
@@ -112,7 +119,7 @@ padding-left: 15px;
 .message-container {
   position: fixed;
   top: 72px;
-  right: 15px;
+  right: 200px;
   z-index: 99999999999;
 }
 

@@ -23,21 +23,21 @@ def add_testimonials(request):
     """ A view to let users create testimonies"""
 
     if request.method == "POST":
-        form = TestimonyForm(request.POST)
-        if form.is_valid:
-            form.instance.creator = request.user
-            form.save()
+        testimony_form = TestimonyForm(request.POST)
+        if testimony_form.is_valid:
+            testimony_form.instance.creator = request.user
+            testimony_form.save()
             messages.success(request, 'Successfully created Testimony!')
             return redirect(reverse('testimonials')) # Keeps user on same page.
         else:
             messages.error(request, 'Failed to create testimony. Please ensure the form is valid.')
     else:
-        form = TestimonyForm()
+        testimony_form = TestimonyForm()
     
     template = 'testimonials/add_testimony.html'
     
     context = {
-        'form': form,
+        'testimony_form': testimony_form,
     }
 
     return render(request, template, context)
@@ -48,19 +48,25 @@ def edit_testimonials(request, testimonies_id): # Testimonies_id is not a valid 
 
     testimonies = get_object_or_404(Testimonies, pk=testimonies_id)
 
-    print(testimonies_id)
+    testimony_form = TestimonyForm(initial={
+    'creator': testimonies.creator,
+    'name': testimonies.name,
+    'date': testimonies.date,
+    'description': testimonies.description,
+    'rating': testimonies.rating,
+    })
 
     if request.user == testimonies.creator:
         if request.method == "POST":
-            form = TestimonyForm(request.POST, instance=testimonies)
-            if form.is_valid:
-                form.save()
+            testimony_form = TestimonyForm(request.POST, instance=testimonies)
+            if testimony_form.is_valid:
+                testimony_form.save()
                 messages.success(request, 'Successfully updated Testimony!')
                 return redirect(reverse('testimonials'))
             else:
                 messages.error(request, 'Failed to update testimony. Please ensure the form is valid.')
         else:
-            form = TestimonyForm()
+            testimony_form = TestimonyForm()
     else:
         messages.error(request, 'Sorry, only the original author can do that')
         return redirect(reverse('testimonials'))
@@ -68,7 +74,7 @@ def edit_testimonials(request, testimonies_id): # Testimonies_id is not a valid 
     template = 'testimonials/edit_testimony.html'
     
     context = {
-        'form': form,
+        'form': testimony_form,
         'testimonies': testimonies
     }
 
