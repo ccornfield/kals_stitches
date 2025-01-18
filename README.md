@@ -182,6 +182,14 @@ As the pages for login, logout and account creation are handled by allauth, I wi
 
 ### Contact
 
+!["The contact page for my website"](read_me/features/contact.png)
+
+The contact page was created with the purpose of allowing users to email the business owner with any of their inquiries. The ones signposted on the page are out of stock paintings and international delivery. (Limited stock will be implemented in a later version of the site.) The app works by assigning a database to the form to hold the email, subject and body of the desired email the user wishes to send. Upon hitting the "Submit Enquiry" button, the email will be sent out to the site owner, with the user email already assigned to it to allow for communication. Developing this app required me to understand the email receipt system present in the checkout app so that I could reincorporate it into the contact app, everything was form management I had learned from all the other apps on the site.
+
+### Testimonials
+
+!["The testimonials page for my website"](read_me/features/contact.png)
+
 ## User Stories Testing
 
 |Test Case Type|Description|Test Step|Expected Result|Status|
