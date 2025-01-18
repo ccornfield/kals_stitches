@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)no8nopz00++muzas%a0%sk5)em(o1k^qe@-=4oulxg30dw046
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ccornfield-kalsstitches-5f8r00ryaso.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['kals-stitches-89425bfaa2b7.herokuapp.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-ccornfield-kalsstitches-5f8r00ryaso.ws.codeinstitute-ide.net']
 
@@ -110,7 +110,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
@@ -122,11 +122,20 @@ WSGI_APPLICATION = 'kal_stitches.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+    'default': dj_database_url.parse('postgresql://neondb_owner:fe61vPshKZFk@ep-cool-waterfall-a2adt6ob.eu-central-1.aws.neon.tech/habit_sleet_tux_888075')
     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgresql://neondb_owner:fe61vPshKZFk@ep-cool-waterfall-a2adt6ob.eu-central-1.aws.neon.tech/habit_sleet_tux_888075')
 }
 
 # Password validation
