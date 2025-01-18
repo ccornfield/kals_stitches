@@ -27,10 +27,7 @@ SECRET_KEY = 'p@ei#69*b*zz3u4yie-$()@cy^l(+x9&@6ypx+r0lm(3%_9hr7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['kals-stitches-89425bfaa2b7.herokuapp.com', 'localhost']
-
-CSRF_TRUSTED_ORIGINS = ['https://8000-ccornfield-kalsstitches-5f8r00ryaso.ws.codeinstitute-ide.net']
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -135,10 +132,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-DATABASES = {
-    'default': dj_database_url.parse('postgresql://neondb_owner:fe61vPshKZFk@ep-cool-waterfall-a2adt6ob.eu-central-1.aws.neon.tech/habit_sleet_tux_888075')
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
