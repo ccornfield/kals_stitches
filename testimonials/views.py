@@ -23,7 +23,12 @@ def add_testimonials(request):
     """ A view to let users create testimonies"""
 
     if request.method == "POST":
-        testimony_form = TestimonyForm(request.POST)
+        form_data = {
+            'name': request.POST['name'],
+            'rating': request.POST['rating'],
+            'description': request.POST['description'],
+        }
+        testimony_form = TestimonyForm(form_data)
         if testimony_form.is_valid:
             testimony_form.instance.creator = request.user
             testimony_form.save()

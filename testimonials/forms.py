@@ -13,7 +13,7 @@ RATINGS_CHOICES = (
 class TestimonyForm(forms.ModelForm):
     class Meta:
         model = Testimonies
-        exclude = ('date', 'creator',)
+        fields = ('name', 'rating', 'description',)
         
     rating = forms.ChoiceField(choices=RATINGS_CHOICES)
 
