@@ -26,7 +26,7 @@
     </div>
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-xl-6 col-12 mb-5">
             <p> Fill out the form below to complete your order. Thank you!</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
@@ -85,10 +85,10 @@
                 </div>
             </form>
         </div>
-        <div class="col-6">
+        <div class="col-xl-6 col-12">
             <p>Order Summary: {{product_count}}
             <div class="row">
-                <div class="col-7 offset-2">
+                <div class="col-7 offset-xl-2">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
                 </div>
                 <div class="col-3 text-right">
