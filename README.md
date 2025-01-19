@@ -188,7 +188,40 @@ The contact page was created with the purpose of allowing users to email the bus
 
 ### Testimonials
 
-!["The testimonials page for my website"](read_me/features/contact.png)
+!["The testimonials page for my website"](read_me/features/testimonials.png)
+
+The testimonials page is the sites answer to how a user might leave a review on the site as a whole. While originally meant to be specifically product reviews, testimonials were decided upon instead due to certain time constraints. The testimonials page shows all testimonials within a box, allowing the user to scroll to find specific testimonials and preventing it from spilling far down the page. Each testimonial also generates with it's own specific edit and delete buttons that offer it full crud functionality. The form for creating these testimonials are made up of the users name, the rating out of 5 they would give the website website as well as the testimony body itself. Hitting the create testimony button will then post the testimony to the database to be displayed on the main app page. The edit button works the same only it takes the testimony id of the selected testimony and uses it to display that information already in the form via an instance. Coding in that feature took a while since I had forgotten to trigger that even in the GET method of my view rather than try and squeeze it into the post function. The delete button works by simply finding and deleting the testimony id associated with the button.
+
+### Products
+
+!["The Products page for my website"](read_me/features/testimonials.png)
+
+*
+
+### Product Details
+
+!["The Product Details page for my website"](read_me/features/testimonials.png)
+
+*
+
+### Bag
+
+!["The Bag page for my website"](read_me/features/testimonials.png)
+
+*
+
+### Checkout
+
+!["The Checkout page for my website"](read_me/features/testimonials.png)
+
+*
+
+### Checkout Success
+
+!["The Checkout Success page for my website"](read_me/features/testimonials.png)
+
+*
+
 
 ## User Stories Testing
 
@@ -211,7 +244,7 @@ The contact page was created with the purpose of allowing users to email the bus
 |Functionality|Add items in the shopping bag|Users should be able to add items to their shopping bag|Enable users to add items of various quantities and sizes to a shopping bag.|Pass or fail|
 |Functionality|Update items in the shopping bag|Users should be able to change product amounts if they change their mind.|Shopping bag should carry functionally to change quantity amounts.|Pass or fail|
 |Functionality|Delete items in the shopping bag|Users should be able to delete products from the bag if they change their mind.|Shopping bag should carry functionally to delete added products.|Pass or fail|
-|Functionality|#|#|#|Pass or fail|
+|Functionality|Creating testimonials for the site|Users should be able to provide their feeback on the site via testimonials|Testimonials should possess full CRUD functionality.|Pass or fail|
 
 
 
@@ -233,17 +266,23 @@ The contact page was created with the purpose of allowing users to email the bus
 
 To deploy my site I used heroku. This was done by using the following steps.
 
-1. Generating a requirements.txt file containing the python dependencies needed for the project.
-2. Create a Procfile to contain the command for starting up the website.
-3. Create a new variable in __init__.py called DATABASE_URL to allow the project to read an external database.
-4. Log on to Heroku.com and create a new app, while also giving it a unique name and setting the region to europe.
-5. In the settings section, create a config var on the heroku app and assign it the url given by Code Institute.
-6. Add to the config var all the details contained in env.py except DEVELOPMENT and DB_URL.
-7. Go onto the deploy section, and use Connect to Github as the deployment method.
-8. Select your github repo from the list and use Manual Deploy to deploy the branch of choice.
-9. Use the run command feature and type python3 into the console to get the python interpreter.
-10. Run Terminal.py to build the database for the site.
-11. Click run app and enjoy! Be sure to ensure that the site works as it should and that DEBUG is set to false.
+1. Use the code institute database generator to get a unique database url for deployment.
+2. Install dj_database_url and psycopg2 to handle the generated database.
+3. Set up settings.py to send database data to the generated URL.
+4. Load all fixtures to the URL as well as migrate all databases to it. 
+5. Generating a requirements.txt file containing the python dependencies needed for the project.
+6. Create a Procfile to contain the command for starting up the website.
+3. Log on to Heroku.com and create a new app, while also giving it a unique name and setting the region to europe.
+4. In the settings section, create a config var on the heroku app to hold the DATABASE_URL and assign it the url given by Code Institute.
+5. Establish the stripe variables and django secret key to this section also.
+6. Create an AWS account.
+7. Set up S3 and IAM services with the relevant Users, Buckets and Policies.
+8. Install django-storages and Boto3 and create custom-storages.py
+9. In this file, establish the location of where the media and static files will go. This is because heroku cannot handle the deployment of static files.
+10. Back in settings, set up the static files so that in the presence of the USE_AWS variable in config vars, use the setup that targets S3 for storing static and media files.
+11. Make sure that all other vital variables are dependant on them being present in os.environ() rather than declared in order to prevent security flaws.
+12. Select your github repo from the list and use Manual Deploy to deploy the branch of choice.
+13. Click run app and enjoy! Be sure to ensure that the site works as it should and that DEVELOPMENT is set to false.
 
 It should also be noted that debug should be set to false before publishing the website. I have done this and provided the relevant evidence below.
 
