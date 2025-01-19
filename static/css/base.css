@@ -131,3 +131,11 @@ padding-left: 15px;
 .testimony-link{
   text-decoration: none;
 }
+
+.mobile-nav{
+  display: inline;
+}
+
+.search-bar{
+  min-width: 300px;
+}
