@@ -194,31 +194,31 @@ The testimonials page is the sites answer to how a user might leave a review on 
 
 ### Products
 
-!["The Products page for my website"](read_me/features/testimonials.png)
+!["The Products page for my website"](read_me/features/products.png)
 
 *
 
 ### Product Details
 
-!["The Product Details page for my website"](read_me/features/testimonials.png)
+!["The Product Details page for my website"](read_me/features/product_details.png)
 
 *
 
 ### Bag
 
-!["The Bag page for my website"](read_me/features/testimonials.png)
+!["The Bag page for my website"](read_me/features/bag.png)
 
 *
 
 ### Checkout
 
-!["The Checkout page for my website"](read_me/features/testimonials.png)
+!["The Checkout page for my website"](read_me/features/checkout.png)
 
 *
 
 ### Checkout Success
 
-!["The Checkout Success page for my website"](read_me/features/testimonials.png)
+!["The Checkout Success page for my website"](read_me/features/checkout_success.png)
 
 *
 
@@ -286,7 +286,7 @@ To deploy my site I used heroku. This was done by using the following steps.
 
 It should also be noted that debug should be set to false before publishing the website. I have done this and provided the relevant evidence below.
 
-![Proof that I have set the debug on my set to false.]()
+![Proof that I have set the debug on my set to false.](read_me/debug_false_proof.png)
 
 # Languages #
 
