@@ -22,7 +22,7 @@ def contact(request):
 
         if contact_form.is_valid():
             contact = contact_form.save()
-            cust_email = contact.email
+            cust_email = settings.DEFAULT_FROM_EMAIL
             subject = render_to_string(
                 'contact/inquiry_emails/inquiry_email_subject.txt',
                 {'contact': contact})
@@ -35,8 +35,8 @@ def contact(request):
             send_mail(
                 subject,
                 body,
-                settings.DEFAULT_FROM_EMAIL,
-                [cust_email]
+                contact,
+                [cust_email],
             ) 
         else:
             messages.error(request, 'There was an error with your form. \
