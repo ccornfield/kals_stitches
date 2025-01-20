@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#CSRF_TRUSTED_ORIGINS = os.environ.get('CSRF_TRUSTED_ORIGINS', '')
 CSRF_TRUSTED_ORIGINS = ['https://8000-ccornfield-kalsstitches-5f8r00ryaso.ws.codeinstitute-ide.net']
 
 # Quick-start development settings - unsuitable for production

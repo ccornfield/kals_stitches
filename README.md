@@ -196,31 +196,32 @@ The testimonials page is the sites answer to how a user might leave a review on 
 
 !["The Products page for my website"](read_me/features/products.png)
 
-*
+The products page is where all the available products on the site are displayed to the user. The individual products are displayed to the user in seperate cards which contain both the item price, the item name and the image of the item itself. Items are arranged 4 on a row which shrinks down the smaller the screen size gets to ensure proper responsiveness on mobile devices. At the top of the container there are a set of buttons. One takes the user back to the home page and the other allows the user to search for products by a variety of criteria.
+When creating the product app, my primary goal was to read clearly to the user due to the desired target audience of my anonymous client. To do that I left the work fairly uncustomized, only really changing things to give the individual icons more space. This was because bootstrap defaults have a very bright white, which contrasted very nicely with my sandstone background.
 
 ### Product Details
 
 !["The Product Details page for my website"](read_me/features/product_details.png)
 
-*
+When a user clicks on a product image on the product page, they will be taken to the product details page. This is the page where users can get more information about a chosen item, select the quantity of item they want and then add it to the shopping bag. Users on the details page can clearly see the item title, the collection the item belongs to, the item price, how many upvotes and downvotes the item has (Future feature to implement) and finally how many items in the quantity box. The user has the option to click the box and manually input a price however, an easier alternative is to click the button on either side of the box instead to increment it or decrement it by one. When the user choses to add the item to the bag, they will recieve a toast informing them if it has been successfully added or not.
 
 ### Bag
 
 !["The Bag page for my website"](read_me/features/bag.png)
 
-*
+The bag app is where the customers items are held up until they are ready to go on to the checkout app. Here the products name, item, SKU code and item quantity can be seen and highlighed by the headers above each section of it. Here, due to the bags nature of an array, the user is easily able to increase or decrease the quantity of an item if they so want it or even delete the item all together if they change their mind. Towards the bottom, the delivery cost can be seen as a flat £10  to cover potential petrol costs in delivery as well has the cost of bubble wrapping the artwork. This delivery is then added together with the total cost of the items selected to display a grand total price for the user. A significant issue with the development of the bag, was the lack of javascript functionality. Initially, the update and delete buttons were non functional and instead merely just refreshed the page repeatedly. When I investigated the issue, I learned that the issue was in the use of an outdated version of popperJS. Once an older version was implemented, the javascript worked as intended save for the toast. They would disappear far too quickly for the users to read them and their close buttons did not work. This was fixed by giving them the missing classes to interact with bootstraps aria labels and giving them a data class to extend their timeout time to 5000ms as opposed to the default 500ms.
 
 ### Checkout
 
 !["The Checkout page for my website"](read_me/features/checkout.png)
 
-*
+The checkout app is where, through the use of stripe, the users payments are handled and the order is then completed. On the left of the container is the stripe form, this form first asks for the users name and email for the use of identification. And then it requests the users delivery information. This can be handled in a couple ways, the user can either input their delivery details into their profile and have it automatically added to their checkout or they can input it directly into the checkout form and then use the remember me button to add it to their profile to use for later checkouts. Of course, the user can also access the checkout app however they cannot save their details for later if they do this and must ultimately re-enter their details on future purchases. The stripe form is handled by outside css and js specific to the checkout app, when generated, users can enter their credit card information. Upon submitting, the payment will be handled by stripe securely and webhooks on the site will interact with the associated stripe account to give feedback on the status on the transaction. On the right is the details for their purchase, handled in a similar manner to their bag. It includes an order summary of the total amount of items requested, then the item image, name, price and quantity of said item. Below it are the delivery charge and price totals as previously discussed. This app, after intial confusion with how to set up stripe due to not properly setting up it's webhooks, was mainly marred by an unresponsive layout as both sides of the container would start to merge onto each other. To rectify this I made the bootstrap columns that were normally 6 in width, instead only conditionally 6 depending on screen size whilst the normal column size was set to 12. This made it so that the order information was below the checkout form and thus easier to read on mobile devices.
 
 ### Checkout Success
 
 !["The Checkout Success page for my website"](read_me/features/checkout_success.png)
 
-*
+This is the page that handles displaying post order information that would not normally be present in the previous two screens and also to inform the user that their order was indeed successful. The unique information displayed on this page consists of the order number and the order date, the former of which is randomly generated in order to have each transaction be completely unique for the purposes of the user later being able to access their own user history. This same page is also used for displaying a users order when they look in their profiles order history. At the bottom of the page, the user is given a buttom to take them back to the home page.
 
 
 ## User Stories Testing
@@ -246,7 +247,19 @@ The testimonials page is the sites answer to how a user might leave a review on 
 |Functionality|Delete items in the shopping bag|Users should be able to delete products from the bag if they change their mind.|Shopping bag should carry functionally to delete added products.|Pass or fail|
 |Functionality|Creating testimonials for the site|Users should be able to provide their feeback on the site via testimonials|Testimonials should possess full CRUD functionality.|Pass or fail|
 
+### Developing Custom Apps
 
+#### Contact
+
+*
+
+#### Testimonials
+
+*
+
+#### Future Features
+
+*
 
 ## Validator Testing
 
