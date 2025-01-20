@@ -22,6 +22,7 @@ def contact(request):
 
         if contact_form.is_valid():
             contact = contact_form.save()
+            address - contact.email
             cust_email = settings.DEFAULT_FROM_EMAIL
             subject = render_to_string(
                 'contact/inquiry_emails/inquiry_email_subject.txt',
