@@ -28,7 +28,7 @@ def contact(request):
                 {'contact': contact})
             body = render_to_string(
                 'contact/inquiry_emails/inquiry_email_body.txt',
-                {'contact': contact, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+                {'contact': contact})
             
             messages.success(request, 'Contact email sent successfully')
         
