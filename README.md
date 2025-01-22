@@ -269,9 +269,9 @@ The way that I did this was ensure that when the template called for edit via th
 
 ### W3C Validator
 
-### Lighthouse Validator
+This validator was used to check the integrity and quality of my HTML and CSS pages.
 
-### Javascript Validator
+### Lighthouse Validator
 
 ### Python Validator
 
