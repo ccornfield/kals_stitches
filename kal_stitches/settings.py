@@ -25,7 +25,7 @@ CSRF_TRUSTED_ORIGINS = ['https://8000-ccornfield-kalsstitches-5f8r00ryaso.ws.cod
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = ['*']
 
