@@ -272,13 +272,19 @@ The way that I did this was ensure that when the template called for edit via th
 
 ### W3C Validator
 
-This validator was used to check the integrity and quality of my HTML and CSS pages.
+This validator was used to check the integrity and quality of my HTML and CSS pages. The images for my html validator work will be available in read_me/validators/w3c/html however an example will still be provided. In regards to the html within the validator, I received no errors across any of the html pages that I tested. What errors I did end up receiving were related to the ginja present in the code which cannot be removed due to them being a requirement for certain views within my code to function. These ginja errors extended not just to creating loops in the code but also when trying to use form actions to call views essential for the apps function. As for my css, in both of the pages my sites uses, the validator returned that both of them did not have any errors at all, the evidence for this is below
+
+!["An average error for one of my projects html pages"](read_me/validators/w3c/html/base_html_validator.png)
+!["Proof that my base.css had no errors."](read_me/validators/w3c/css/base_css_validator.png)
+!["Proof that my checkout.css had no errors"](read_me/validators/w3c/css/checkout_css_validator.png)
 
 ### Lighthouse Validator
 
-### Python Validator
+
 
 ### Wave
+
+
 
 # Deployment #
 
