@@ -1,10 +1,10 @@
-# Gamedream - A portfolio project.
+# Kal's Stitches - A portfolio project.
 
 Welcome to my code institute website readme. This is for my milestone 4 project. For this I have decided to create a website for a anonymous clients textile business revolving around the sale of her textile art and cards alongside various kits used to create them. I have done this by creating a django framework powered by a sqlite database and the web application stripe designed to provide secure payments. This was done because the project goal was to create an effective ecommerce website.
 
 !["The first thing users see when loading the site"](read_me/home_page.png)
 
-[Click here to access the live website]()
+[Click here to access the live website](https://kals-stitches-89425bfaa2b7.herokuapp.com/)
 
 ## Table of Contents
 
@@ -13,10 +13,9 @@ Welcome to my code institute website readme. This is for my milestone 4 project.
 3. [Testing](#testing)
 4. [Deployment](#deployment)
 5. [Languages](#languages)
-6. [Media Queries](#media-queries)
-7. [Software](#software)
-8. [Code](#code)
-9. [Credits](#credits)
+6. [Software](#software)
+7. [Code](#code)
+8. [Credits](#credits)
 
 # Planning & Development #
 
@@ -160,10 +159,6 @@ The below database models shows the relationships between all of the models in m
 
 # Features #
 
-# Testing #
-
-## Page Testing
-
 ### General
 
 The general design of my website was inspired by the need for it to look both eye catching yet easy to read and understand. To facilitate this, a universal feature on the website is that all buttons are either large or distinctly colored. In additon to this, all important bodies of text were surrounded in a clear border to draw view attention to them first before any other on screen elements.
@@ -190,7 +185,7 @@ The contact page was created with the purpose of allowing users to email the bus
 
 !["The testimonials page for my website"](read_me/features/testimonials.png)
 
-The testimonials page is the sites answer to how a user might leave a review on the site as a whole. While originally meant to be specifically product reviews, testimonials were decided upon instead due to certain time constraints. The testimonials page shows all testimonials within a box, allowing the user to scroll to find specific testimonials and preventing it from spilling far down the page. Each testimonial also generates with it's own specific edit and delete buttons that offer it full crud functionality. The form for creating these testimonials are made up of the users name, the rating out of 5 they would give the website website as well as the testimony body itself. Hitting the create testimony button will then post the testimony to the database to be displayed on the main app page. The edit button works the same only it takes the testimony id of the selected testimony and uses it to display that information already in the form via an instance. Coding in that feature took a while since I had forgotten to trigger that even in the GET method of my view rather than try and squeeze it into the post function. The delete button works by simply finding and deleting the testimony id associated with the button.
+The testimonials page is the sites answer to how a user might leave a review on the site as a whole. While originally meant to be specifically product reviews, testimonials were decided upon instead due to certain time constraints. The testimonials page shows all testimonials within a box, allowing the user to scroll to find specific testimonials and preventing it from spilling far down the page. Each testimonial also generates with it's own specific edit and delete buttons that offer it full crud functionality. The form for creating these testimonials are made up of the users name, the rating out of 5 they would give the website website as well as the testimony body itself. Hitting the create testimony button will then post the testimony to the database to be displayed on the main app page. The edit button works the same only it takes the testimony id of the selected testimony and uses it to display that information already in the form via an instance. The delete button works by simply finding and deleting the testimony id associated with the button.
 
 ### Products
 
@@ -209,13 +204,13 @@ When a user clicks on a product image on the product page, they will be taken to
 
 !["The Bag page for my website"](read_me/features/bag.png)
 
-The bag app is where the customers items are held up until they are ready to go on to the checkout app. Here the products name, item, SKU code and item quantity can be seen and highlighed by the headers above each section of it. Here, due to the bags nature of an array, the user is easily able to increase or decrease the quantity of an item if they so want it or even delete the item all together if they change their mind. Towards the bottom, the delivery cost can be seen as a flat £10  to cover potential petrol costs in delivery as well has the cost of bubble wrapping the artwork. This delivery is then added together with the total cost of the items selected to display a grand total price for the user. A significant issue with the development of the bag, was the lack of javascript functionality. Initially, the update and delete buttons were non functional and instead merely just refreshed the page repeatedly. When I investigated the issue, I learned that the issue was in the use of an outdated version of popperJS. Once an older version was implemented, the javascript worked as intended save for the toast. They would disappear far too quickly for the users to read them and their close buttons did not work. This was fixed by giving them the missing classes to interact with bootstraps aria labels and giving them a data class to extend their timeout time to 5000ms as opposed to the default 500ms.
+The bag app is where the customers items are held up until they are ready to go on to the checkout app. Here the products name, item, SKU code and item quantity can be seen and highlighed by the headers above each section of it. Here, due to the bags nature of an array, the user is easily able to increase or decrease the quantity of an item if they so want it or even delete the item all together if they change their mind. Towards the bottom, the delivery cost can be seen as a flat £10  to cover potential petrol costs in delivery as well has the cost of bubble wrapping the artwork. This delivery is then added together with the total cost of the items selected to display a grand total price for the user.
 
 ### Checkout
 
 !["The Checkout page for my website"](read_me/features/checkout.png)
 
-The checkout app is where, through the use of stripe, the users payments are handled and the order is then completed. On the left of the container is the stripe form, this form first asks for the users name and email for the use of identification. And then it requests the users delivery information. This can be handled in a couple ways, the user can either input their delivery details into their profile and have it automatically added to their checkout or they can input it directly into the checkout form and then use the remember me button to add it to their profile to use for later checkouts. Of course, the user can also access the checkout app however they cannot save their details for later if they do this and must ultimately re-enter their details on future purchases. The stripe form is handled by outside css and js specific to the checkout app, when generated, users can enter their credit card information. Upon submitting, the payment will be handled by stripe securely and webhooks on the site will interact with the associated stripe account to give feedback on the status on the transaction. On the right is the details for their purchase, handled in a similar manner to their bag. It includes an order summary of the total amount of items requested, then the item image, name, price and quantity of said item. Below it are the delivery charge and price totals as previously discussed. This app, after intial confusion with how to set up stripe due to not properly setting up it's webhooks, was mainly marred by an unresponsive layout as both sides of the container would start to merge onto each other. To rectify this I made the bootstrap columns that were normally 6 in width, instead only conditionally 6 depending on screen size whilst the normal column size was set to 12. This made it so that the order information was below the checkout form and thus easier to read on mobile devices.
+The checkout app is where, through the use of stripe, the users payments are handled and the order is then completed. On the left of the container is the stripe form, this form first asks for the users name and email for the use of identification. And then it requests the users delivery information. This can be handled in a couple ways, the user can either input their delivery details into their profile and have it automatically added to their checkout or they can input it directly into the checkout form and then use the remember me button to add it to their profile to use for later checkouts. Of course, the user can also access the checkout app however they cannot save their details for later if they do this and must ultimately re-enter their details on future purchases. The stripe form is handled by outside css and js specific to the checkout app, when generated, users can enter their credit card information. Upon submitting, the payment will be handled by stripe securely and webhooks on the site will interact with the associated stripe account to give feedback on the status on the transaction. On the right is the details for their purchase, handled in a similar manner to their bag. It includes an order summary of the total amount of items requested, then the item image, name, price and quantity of said item. Below it are the delivery charge and price totals as previously discussed. 
 
 ### Checkout Success
 
@@ -223,6 +218,40 @@ The checkout app is where, through the use of stripe, the users payments are han
 
 This is the page that handles displaying post order information that would not normally be present in the previous two screens and also to inform the user that their order was indeed successful. The unique information displayed on this page consists of the order number and the order date, the former of which is randomly generated in order to have each transaction be completely unique for the purposes of the user later being able to access their own user history. This same page is also used for displaying a users order when they look in their profiles order history. At the bottom of the page, the user is given a buttom to take them back to the home page.
 
+# Testing #
+
+## Page Testing
+
+Requiring much more python code than even my previous project, this was the hardest project of the course so far. It was also the one that took the most amount of time to test because each app had to be checked and ensured that they each flowed into each other seemlessly and could call upon each other without bugs and errors where appropriate.  Finding errors in my code however was simplified since I had a tool which would inform me of any bugs and errors in the code already built in to django whereas in previous projects I would need a 3rd party dependency (Werkzeug) or simply experiment with the code until it functioned as intended. For this I will be going page by page to discuss the errors I found on each page and how I resolved them. This will also feature Testing user stories, how I created each custom app not featured in boutique ado (For which this project was heavily based on) and finally a discussion of the different validators during development.
+
+### Home
+
+On my home page, I had two dropdowns called Our collections and Our artwork respectively. These features were going to be utilized so that a user could jump straight to the products page knowing what they were looking for. However upon testing they did not work as intended, they would not even drop down to reveal options. After checking my javascript I had realized that I was using the wrong version of popperJS. After swapping to an earlier version, the features worked as intended. There was also the issue that they would end up showing the same html content despite not having the same info in the code itself. To rectify this particular error, I made sure that each dropdown had unique tags and labels, this made it so that one dropdown would not communicate with the same options. This proved to be effective and fixed my error.
+
+### Product
+
+When testing my product app, I had a similar issue to my homepage where I could not get my dropdowns to work. While they did indeed drop down with options and most of them worked as intended, the option to search by art collection did not work. Upon investigation, I learned that it was an error due to how I set up my search functionality. Originally, when a sort function like that was called, the search criteria was split up using underscores via javascript so that only the sort criteria was used and not other parts of the variable name used in the views. However, in my models, the art collection model was called as art_collection. This meant that upon attempts to search for art_collection, it would instead only search for art, thus throwing up the error. To resolve this, everything with an underscore involved in the process was replaced with a - instead of _. This resolved the issue and now all my app dropdowns work as intended.
+
+### Product Detail
+
+The product detail had an error that was also ultimately resolved by rolling back the sites version of popperJS. This time rather than experiencing any issues with a dropdown, it was instead an issue where trying to use the quantity buttons provided instead refreshed the page. Rolling back popperJS did indeed resolve this issue.
+
+### Bag
+
+A significant issue with the development of the bag, was the lack of javascript functionality. Initially, the update and delete buttons were non functional and instead merely just refreshed the page repeatedly. When I investigated the issue, I learned that the issue was in the use of an outdated version of popperJS. Once an older version was implemented, the javascript worked as intended save for the toast. They would disappear far too quickly for the users to read them and their close buttons did not work. This was fixed by giving them the missing classes to interact with bootstraps aria labels and giving them a data class to extend their timeout time to 5000ms as opposed to the default 500ms.
+
+### Checkout
+
+This app, after intial confusion with how to set up stripe due to not properly setting up it's webhooks, was mainly marred by an unresponsive layout as both sides of the container would start to merge onto each other. To rectify this I made the bootstrap columns that were normally 6 in width, instead only conditionally 6 depending on screen size whilst the normal column size was set to 12. This made it so that the order information was below the checkout form and thus easier to read on mobile devices. Another error this app suffered was that upon completing the checkout operation, it would not actually take users to the checkout success page, instead just keeping them on the same page. This was because I had forgotten to add the args to the redirect function on line 78 within it's views.py. Once this was added, it was able to take users to the correct page because it now could use order id's to take it there.
+
+
+### Testimony
+
+At first, I had an issue with creating the edit feature because my attempts to try and set it up so that the form would open up with the id's data already present in it were not working correctly. Some attempts trying to adopt earlier flask code would even provide errors to django. In the end, I fixed the error because I had forgotten to trigger that even in the GET method of my view rather than try and squeeze it into the post function. This then allowed the form data to be present in the edit form so that users could see what they were editing. My delete function suffered a different issue. When the modal was called to ensure the user did not accidentally delete the button, when that button was pressed, even if the use was the same as the creator: It was registered as a different user and they were sent back to the testimony page with an error toast. The reason for this was never fully understood however it might have been due to allauth registering the user on a page by page basis. Due to the code for the modal being set as an include, it counted users on that page as different to users on the original testimony page. So to fix this, I simply moved the modal code out of the include and back onto the main page and it worked as intended.
+
+### Contact
+
+For contact, the only error that came up was shared by the checkout app and some allauth functionality. Due to spelling mistakes in the email section of settings.py, the emails would not send out as intended. Correcting these spelling mistakes fixed the issue.
 
 ## User Stories Testing
 
@@ -272,7 +301,7 @@ The way that I did this was ensure that when the template called for edit via th
 
 ### W3C Validator
 
-This validator was used to check the integrity and quality of my HTML and CSS pages. The images for my html validator work will be available in read_me/validators/w3c/html however an example will still be provided. In regards to the html within the validator, I received no errors across any of the html pages that I tested. What errors I did end up receiving were related to the ginja present in the code which cannot be removed due to them being a requirement for certain views within my code to function. These ginja errors extended not just to creating loops in the code but also when trying to use form actions to call views essential for the apps function. As for my css, in both of the pages my sites uses, the validator returned that both of them did not have any errors at all, the evidence for this is below
+This validator was used to check the integrity and quality of my HTML and CSS pages. The images for my html validator work will be available in read_me/validators/w3c/html however an example will still be provided. In regards to the html within the validator, I received no errors across any of the html pages that I tested. What errors I did end up receiving were related to the ginja present in the code which cannot be removed due to them being a requirement for certain views within my code to function. These ginja errors extended not just to creating loops in the code but also when trying to use form actions to call views essential for the apps function. As for my css, in both of the pages my sites uses, the validator returned that both of them did not have any errors at all, the evidence for this is below.
 
 !["An average error for one of my projects html pages"](read_me/validators/w3c/html/base_html_validator.png)
 !["Proof that my base.css had no errors."](read_me/validators/w3c/css/base_css_validator.png)
@@ -280,15 +309,31 @@ This validator was used to check the integrity and quality of my HTML and CSS pa
 
 ### Lighthouse Validator
 
+This validator was used to check my website in 4 categories: Performance, Accessibility, Best Practises and SEO (Search Engine Optimization). As can be seen from the below data, while my site never went into the red where severe problems in my site are apparent, there was still alot of room for improvement. Most often the part of my site that was in the green was my performance, which I had noticed was only present on sites that had to render images multiple times a page. When I checked why, the reason was due to the wildly disparate sizes of the images used, which caused the page to spend alot of processing power to try and get them to a better size. My performance 
 
+My accessibility was my second highest scoring category and the main reason for this was due to several factors but the most prevailing characteristic they all shared was this; They lacked some form of alt text. Forms had no labels, this was hard to correct as they had been automatically created by crispy forms however for item boxes there were missing labels. My images lacked alt text to describe what they were to screen readers. My button lacked accessible names that could be read using a screen reader and my links lacked names that make them distinct from each other. Speaking of my links, the core reason for my SEO being so poor was due to simply, again, having no alt text on my images. They also had an issue where they were not considered crawlable by google, this mean that they were not wrapped in a href and using a tags but instead used something else. Attempting to look into Best packages revealed that it was caused mainly by the presence of 3rd party cookies relating to stripe.
+
+!["The lighthouse results for my home page"](read_me/validators/lighthouse/home_lighthouse_validator.png)
+!["The lighthouse results for my contact page"](read_me/validators/lighthouse/contact_lighthouse_validator.png)
+!["The lighthouse results for my testimony page"](read_me/validators/lighthouse/testimony_lighthouse_validator.png)
+!["The lighthouse results for my add testimony page"](read_me/validators/lighthouse/add_testimony_lighthouse_validator.png)
+!["The lighthouse results for my product page"](read_me/validators/lighthouse/products_lighthouse_validator.png)
+!["The lighthouse results for my product details page"](read_me/validators/lighthouse/product_detail_lighthouse_validator.png)
+!["The lighthouse results for my bag page"](read_me/validators/lighthouse/bag_lighthouse_validator.png)
+!["The lighthouse results for my checkout page"](read_me/validators/lighthouse/checkout_lighthouse_validator.png)
+!["The lighthouse results for my checkout success page"](read_me/validators/lighthouse/checkout_success_lighthouse_validator.png)
 
 ### Wave
 
+The wave validator was used as a means to test the quality of the code on my web page. It would do this by highlighting the different parts of my websites and claim if it worked or didn't work. For example, it would highlight an empty link on my page or it would highlight different features on my website or the aria labels present on the site. I could only check so many of the pages of my website due to errors occuring when trying to add items to the shopping back, the images below were the only ones I was able to get. The empty links were due to the social media links in the footer of my website and the empty button links were mostly due to buttons in my header. Missing form errors, as previously mentioned, were due to how crispy forms render their forms and as such were not something that could be edited.
 
+!["The wave results for my home page"](read_me/validators/wave/home_wave_validator.png)
+!["The wave results for my contact details page"](read_me/validators/wave/contact_wave_validator.png)
+!["The wave results for my product page"](read_me/validators/wave/product_wave_validator.png)
+!["The wave results for my product details page"](read_me/validators/wave/product_detail_wave_validator.png)
+!["The wave results for my testimony page"](read_me/validators/wave/testimonials_wave_validator.png)
 
 # Deployment #
-
-(Subject to change in accordance with django specific deployment.)
 
 To deploy my site I used heroku. This was done by using the following steps.
 
@@ -348,3 +393,21 @@ https://books.agiliq.com/projects/django-admin-cookbook/en/latest/current_user.h
 Code Institute for the opportunity to learn and hone the craft of developing websites.
 
 My loving and supportive family for supporting me in this endeavor.
+
+I got the images for my website from the following sources:
+
+https://www.textileartist.org/urban-fiber-how-cities-drive-textile-art/
+
+https://www.jackiegaletextileart.com/store-1-5/p/indian-summer
+
+https://www.shop.obsidianart.co.uk/products/summer-skies-textile-art-by-rachel-wright
+
+https://www.fionarobertsonartworks.co.uk/autumn.html
+
+https://www.jacqui-textile.com/product/spring/
+
+https://www.jackiegaletextileart.com/store-1-1/p/spring-tide
+
+https://thecannysquirrel.co.uk/products/winter-stag-textile-art
+
+https://elliehipkinart.com/product/winter-light-original-painting

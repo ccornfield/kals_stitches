@@ -136,16 +136,6 @@ padding-left: 15px;
   display: inline;
 }
 
-.search-bar{
-  min-width: 300px;
-}
-
 .qty_input{
-  min-width: 100px;
-}
-
-@media (max-width:960px) {
-  .search-bar{
-    min-width: 100px;
-  }
+  width: 100px;
 }
